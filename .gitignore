@@ -1,0 +1,25 @@
+# Build artifacts
+*.o
+*.a
+*.so
+*.out
+# Editor and IDE files
+*.swp
+*.swo
+*.swn
+*.suo
+*.cproject
+*.cproject.user
+*.idea/
+*.vscode/
+
+# Operating system files
+.DS_Store
+
+# Miscellaneous files
+*.bak
+*.tmp
+*.log
+*.pid
+*.lock
+
