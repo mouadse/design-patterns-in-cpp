@@ -29,6 +29,7 @@ public:
   void newDocument() {
     Document *doc = createDocument();
     doc->open();
+    delete doc;
   }
 };
 
@@ -43,6 +44,13 @@ public:
 };
 
 int main() {
-  // Code logic here
+  DocumentCreator *textCreator = new TextDocCreator();
+  textCreator->newDocument();
+
+  DocumentCreator *imageCreator = new ImageDocCreator();
+  imageCreator->newDocument();
+
+  delete textCreator;
+  delete imageCreator;
   return 0;
 }
