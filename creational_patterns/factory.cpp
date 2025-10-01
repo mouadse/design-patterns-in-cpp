@@ -23,6 +23,21 @@ public:
   }
 };
 
+class Creator {
+public:
+  virtual ~Creator() {};
+  virtual Product *FactoryMethod() const = 0;
+  std::string someOperation() const {
+    Product *product = this->FactoryMethod();
+
+    std::string result =
+        "Creator: The same creator's code has just worked with " +
+        product->Operation();
+    delete product;
+    return result;
+  }
+};
+
 int main() {
   //
   return 0;
