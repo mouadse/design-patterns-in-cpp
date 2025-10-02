@@ -38,7 +38,27 @@ public:
   }
 };
 
+class ConcreteCreator1 : public Creator {
+public:
+  Product *FactoryMethod() const override { return new ConcreteProduct1; }
+};
+
+class ConcreteCreator2 : public Creator {
+public:
+  Product *FactoryMethod() const override { return new ConcreteProduct2; }
+};
+
+void clientCode(const Creator &creator) {
+  std::cout
+      << "Client: I'm not aware of the creator's class, but it still works.\n"
+      << creator.someOperation() << std::endl;
+}
+
 int main() {
-  //
+  std::cout << "App: Launched with the ConcreteCreator1" << std::endl;
+
+  Creator *creator = new ConcreteCreator1();
+  clientCode(*creator);
+
   return 0;
 }
